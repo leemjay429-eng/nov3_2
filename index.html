@@ -179,12 +179,17 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .lcb-fig img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; color:transparent; }
 .contents_div .lcb-map-row{ display:grid; grid-template-columns:1fr 42.5%; gap:36px; align-items:center; margin:28px 0 0; padding:var(--card-py) 7%; background:#fff; border:1px solid rgba(31,74,51,.18); border-radius:16px; }
 .contents_div .lcb-map-row .lcb-figure{ margin-top:0; }
-.contents_div .lcb-fig--map{ background:#fff; }
+.contents_div .lcb-fig--map{ background:#fff; container-type:inline-size; }
 .contents_div .lcb-fig--map::before{ padding-top:136.41%; }   /* 원본 747×1019 */
 .contents_div .lcb-fig--map img{ object-fit:contain; transform:scale(1.05); }
-/* 전남 강조: 지도 이미지와 같은 비율·위치의 레이어 위에 배지 둘레 글로우 + 물결 */
-.contents_div .lcb-map-layer{ position:absolute; top:0; left:50%; height:100%; aspect-ratio:747/1019; transform:translateX(-50%) scale(1.05); pointer-events:none; }
-.contents_div .lcb-map-pin{ position:absolute; left:var(--pin-x); top:var(--pin-y); width:var(--pin-d); aspect-ratio:1; border-radius:50%; transform:translate(-50%,-50%); --pin-x:30.57%; --pin-y:71.81%; --pin-d:7.3%; }
+/* 지도 위 원·숫자·지역명: 지도 그림(800×1060)이 실제로 보이는 영역과 같은 크기·위치의 레이어 */
+.contents_div .lcb-map-layer{ position:absolute; top:50%; left:50%; width:100%; aspect-ratio:800/1060; transform:translate(-50%,-50%) scale(1.05); pointer-events:none; --map-lab:max(10px, 4.11cqi); --map-num:max(10px, 3.91cqi); }
+.contents_div .lcb-map-pts{ position:absolute; inset:0; }
+.contents_div .lcb-map-pts li{ position:absolute; left:var(--x); top:var(--y); width:8.28%; aspect-ratio:1; transform:translate(-50%,-50%); }
+.contents_div .lcb-map-dot{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#267922; color:#fff; font-size:var(--map-num); font-weight:600; line-height:1; letter-spacing:-0.03em; }
+.contents_div .lcb-map-name{ position:absolute; left:50%; bottom:100%; margin-bottom:16%; transform:translateX(-50%); font-size:var(--map-lab); font-weight:700; line-height:1; letter-spacing:-0.02em; color:#1a1a1a; white-space:nowrap; text-shadow:0 0 1px #ddffde, 0 0 2px #ddffde, 0 0 3px #ddffde, 0 0 4px #ddffde, 0 0 5px #ddffde, 0 0 7px #ddffde, 0 0 10px #ddffde, 0 0 14px #ddffde; }
+/* 전남 강조: 배지 둘레 글로우 + 물결 */
+.contents_div .lcb-map-pin{ position:absolute; inset:0; border-radius:50%; }
 .contents_div .lcb-map-pin::before,
 .contents_div .lcb-map-pin::after{ content:''; position:absolute; inset:0; border-radius:50%; border:2px solid rgba(255,214,70,.6); opacity:0; }
 .contents_div .lcb-anim.is-on .lcb-map-pin{ animation:lcbHalo 3s ease-in-out infinite; }
@@ -337,9 +342,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .lcb-map-text{ padding:0; border-left:0; transform:none; }
   .contents_div .lcb-map-text .lcb-lead + .lcb-lead{ margin-top:10px; }
   .contents_div .lcb-fig--map::before{ padding-top:125%; }
-  .contents_div .lcb-fig--map img{ transform:none; }   /* 4:5, 남는 곳은 흰색 */
-  .contents_div .lcb-map-layer{ transform:translateX(-50%); }
-  .contents_div .lcb-map-pin{ --pin-x:29.87%; }
+  .contents_div .lcb-fig--map img{ transform:translateX(7px) scale(.95); }   /* 4:5, 남는 곳은 흰색 */
+  .contents_div .lcb-map-layer{ width:auto; height:100%; transform:translate(calc(-50% + 7px),-50%) scale(.95); --map-lab:max(10px, 3.88cqi); --map-num:max(10px, 3.69cqi); }   /* 4:5 칸에선 지도 높이에 맞춤 */
   .contents_div .lcb-stat{ grid-template-columns:1fr; margin-top:22px; border-radius:12px; }
   .contents_div .lcb-stat-main{ padding:calc(var(--card-py) + 4px) var(--card-px) var(--card-py); }
   .contents_div .lcb-stat-big{ margin-top:4px; }
@@ -470,7 +474,24 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       <figure class="lcb-figure lcb-map">
         <div class="lcb-fig lcb-fig--map">
           <img src="img/저탄소인증현황지도.jpg" alt="전국 시도별 저탄소 축산물 인증 현황 지도 — 전남 219호로 가장 많음" width="747" height="1019" loading="lazy" decoding="async">
-          <span class="lcb-map-layer lcb-anim" aria-hidden="true"><span class="lcb-map-pin"></span></span>
+          <div class="lcb-map-layer lcb-anim">
+            <ul class="lcb-map-pts">
+              <li style="--x:59.94%;--y:20.94%"><span class="lcb-map-name">강원</span><span class="lcb-map-dot">16</span></li>
+              <li style="--x:18.69%;--y:24.62%"><span class="lcb-map-name">인천</span><span class="lcb-map-dot">1</span></li>
+              <li style="--x:36.81%;--y:24.58%"><span class="lcb-map-name">경기</span><span class="lcb-map-dot">189</span></li>
+              <li style="--x:46.56%;--y:34.72%"><span class="lcb-map-name">충북</span><span class="lcb-map-dot">9</span></li>
+              <li style="--x:70.12%;--y:41.08%"><span class="lcb-map-name">경북</span><span class="lcb-map-dot">37</span></li>
+              <li style="--x:28.44%;--y:42.92%"><span class="lcb-map-name">충남</span><span class="lcb-map-dot">156</span></li>
+              <li style="--x:39.75%;--y:44.62%"><span class="lcb-map-name">세종</span><span class="lcb-map-dot">4</span></li>
+              <li style="--x:58.62%;--y:51.70%"><span class="lcb-map-name">대구</span><span class="lcb-map-dot">2</span></li>
+              <li style="--x:35.88%;--y:58.16%"><span class="lcb-map-name">전북</span><span class="lcb-map-dot">84</span></li>
+              <li style="--x:77.62%;--y:60.85%"><span class="lcb-map-name">울산</span><span class="lcb-map-dot">4</span></li>
+              <li style="--x:56.69%;--y:65.52%"><span class="lcb-map-name">경남</span><span class="lcb-map-dot">104</span></li>
+              <li style="--x:78.56%;--y:71.37%"><span class="lcb-map-name">부산</span><span class="lcb-map-dot">1</span></li>
+              <li style="--x:30.38%;--y:72.12%"><span class="lcb-map-pin"></span><span class="lcb-map-name">전남광주</span><span class="lcb-map-dot">219</span></li>
+              <li style="--x:30.06%;--y:92.88%"><span class="lcb-map-name">제주</span><span class="lcb-map-dot">25</span></li>
+            </ul>
+          </div>
         </div>
         <figcaption class="lcb-cap">출처: 축산물품질평가원</figcaption>
       </figure>
