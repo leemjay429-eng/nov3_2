@@ -58,6 +58,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   --c-ink:#1d2a22; --c-sub:#4b5c51;
   --c-deep:#1f4a33; --c-deep2:#173a28; --c-leaf:#3f7d4f; --c-lime:#cfe58a;
   --c-cream:#f6f2e5; --c-mint:#dbe8cc; --c-gray:#fbfbfb; --c-bar:#9cc47f;
+  --rv-y:28px;   /* 스크롤 등장 이동 거리 */
 
   max-width:800px; margin:0 auto;
   font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
@@ -148,6 +149,14 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .lcb-nav-btn:focus{ outline:none; }
 .contents_div .lcb-nav-btn:active{ color:var(--c-lime); }
 
+/* ===== 스크롤 등장 (나브 아래부터 · JS가 lcb-rv-on을 붙였을 때만) ===== */
+.contents_div .lcb-wrap.lcb-rv-on .lcb-rv{
+  opacity:0; transform:translateY(var(--rv-y));
+  transition:opacity .7s ease, transform .9s cubic-bezier(.22,1,.36,1);
+  transition-delay:var(--rv-d,0s);
+}
+.contents_div .lcb-wrap.lcb-rv-on .lcb-rv.is-in{ opacity:1; transform:none; }
+
 /* ===== 인트로 ===== */
 .contents_div .lcb-intro{ background:var(--c-cream); }
 .contents_div .lcb-h1{ margin-top:14px; font-size:var(--fs-h2); font-weight:800; line-height:1.35; letter-spacing:-0.01em; }
@@ -171,7 +180,9 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .lcb-row dd{ font-size:var(--fs-info); line-height:1.5; }
 
 /* ===== 2. 1위 비결 ===== */
-.contents_div #lcb-sec2{ background:var(--c-gray); }
+.contents_div #lcb-sec2{ background:#f0f1ee; }   /* #fbfbfb보다 조금 진하고 채도 낮은 회색 */
+.contents_div .lcb-kick-row{ display:flex; align-items:flex-end; gap:8px; }   /* 키커 + 작은 이미지, 바닥 기준 */
+.contents_div .lcb-kick-img{ flex:0 0 auto; display:block; width:auto; height:calc(var(--kick) * 1.306); transform:translateX(calc(var(--kick) * -0.0625)); }   /* 웹 높이 약 41.8·왼쪽 2px / 모바일은 비율대로 */
 .contents_div .lcb-figure{ position:relative; margin-top:28px; }
 .contents_div .lcb-fig{ position:relative; width:100%; overflow:hidden; background:#eee; }
 .contents_div .lcb-cap{ position:absolute; right:0; bottom:0; padding:6px 10px; font-size:var(--fs-caption); line-height:1.35; color:var(--c-leaf); white-space:nowrap; }
@@ -216,6 +227,13 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .lcb-stat-main{ display:flex; flex-direction:column; justify-content:center; padding:calc(var(--card-py) + 6px) calc(var(--card-px) + 4px); }
 .contents_div .lcb-stat dt{ font-size:var(--fs-info); font-weight:700; line-height:1.5; color:rgba(246,242,229,.78); white-space:nowrap; }
 .contents_div .lcb-stat-big{ margin-top:6px; font-size:var(--fs-big); font-weight:800; line-height:1; letter-spacing:-0.03em; color:var(--c-lime); white-space:nowrap; }
+/* 219 롤링 (숫자 슬롯) */
+.contents_div .lcb-roll{ display:inline-flex; }
+.contents_div .lcb-roll-d{ display:inline-block; height:1em; overflow:hidden; line-height:1; }
+.contents_div .lcb-roll-s{ display:block; }
+.contents_div .lcb-roll-s > span{ display:block; height:1em; text-align:center; }
+.contents_div .lcb-roll.is-go .lcb-roll-s{ transform:translateY(var(--to)); transition:transform var(--dur) cubic-bezier(.2,.7,.15,1); }
+.contents_div .lcb-roll-sr{ position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
 .contents_div .lcb-stat-big small{ font-size:.42em; font-weight:700; margin-left:4px; letter-spacing:0; }
 .contents_div .lcb-share{ margin-top:26px; }
 .contents_div .lcb-share .lcb-bar-track{ background:rgba(246,242,229,.16); }
@@ -317,6 +335,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     --kick:22px; --lb-h:17px; --lb-px:7px;
     --img-ratio:75%;
     --nav-h:48px; --bar-h:10px; --ico:20px; --badge:32px; --kname:78px; --knum:46px; --fs-big:calc(var(--fs-h2) * 2.3); --mark-w:72px;
+    --rv-y:18px;
   }
   .contents_div .lcb-br--web{ display:none; }
   .contents_div .lcb-br--mo,
@@ -353,7 +372,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .lcb-stat-item{ justify-content:flex-start; padding:var(--card-py) var(--card-px); }
   .contents_div .lcb-stat-item + .lcb-stat-item{ border-top:0; border-left:1px solid rgba(246,242,229,.18); }
   .contents_div .lcb-stat .lcb-tag{ transform:none; }
-  .contents_div .lcb-tag{ height:21px; padding:0 9px 4px; }   /* 글자 10px 그대로, 캡슐만 키움 · 아래 4px로 글자 2px 위로 */
+  .contents_div .lcb-tag{ height:21px; padding:0 9px; }   /* 글자 10px 그대로, 캡슐만 키움 · 높이 고정이라 캡슐 크기 그대로, 글자는 가운데 */
   .contents_div .lcb-stat-item dd{ flex-direction:column; align-items:flex-start; gap:6px; margin-top:2px; }
   .contents_div .lcb-block{ margin-top:32px; }
   .contents_div .lcb-kind-grid{ grid-template-columns:1fr; gap:12px; margin-top:12px; }
@@ -369,11 +388,12 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .lcb-benefit{ padding:18px 0; }
   .contents_div .lcb-benefit-head{ gap:10px; align-items:flex-start; }
   .contents_div .lcb-num{ margin-top:calc((var(--fs-h3) * 1.5 - var(--num-d)) / 2); }   /* h3 첫 줄 가운데 */
+  .contents_div .lcb-benefit:first-child .lcb-num{ transform:translateY(1px); }   /* 1번만 1px 아래로 */
   .contents_div .lcb-benefit p{ margin-top:8px; padding-left:calc(var(--num-d) + 10px); }
   .contents_div .lcb-foot-title{ line-height:1.42; }
   .contents_div .lcb-foot-text{ margin-top:10px; max-width:340px; margin-left:auto; margin-right:auto; }
   .contents_div .lcb-tags{ gap:4px 12px; margin-top:37px; padding-top:33px; }
-  .contents_div .lcb-tags li{ padding:0; border:0; border-radius:0; background:none; font-size:var(--fs-hash); font-weight:400; line-height:1.35; }
+  .contents_div .lcb-tags li{ padding:0; border:0; border-radius:0; background:none; font-size:var(--fs-hash); font-weight:400; line-height:1.35; color:rgba(246,242,229,.55); }
 }
 @media (max-width:480px){
   .contents_div .lcb-wrap{
@@ -396,6 +416,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .cwh-hero img{animation:none!important;transform:none!important;opacity:1!important}
   .contents_div .lcb-map-pin,.contents_div .lcb-map-pin::before,.contents_div .lcb-map-pin::after{animation:none!important}
   .contents_div .lcb-map-pin{box-shadow:0 0 16px 6px rgba(255,224,100,.55)}
+  .contents_div .lcb-wrap.lcb-rv-on .lcb-rv{opacity:1!important;transform:none!important;transition:none!important}
 }
 </style>
 
@@ -468,7 +489,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   <!-- 2. 어떻게 4년 연속 1위가 가능할까? -->
   <section class="lcb-sec" id="lcb-sec2">
     <div class="lcb-group">
-      <p class="lcb-kicker">4년 연속 전국 1위</p>
+      <div class="lcb-kick-row">
+        <p class="lcb-kicker">4년 연속 전국 1위</p>
+        <img class="lcb-kick-img" src="img/키커아이콘.webp" alt="" loading="lazy" decoding="async">
+      </div>
       <h2 class="lcb-h2" tabindex="-1">어떻게 4년 연속 1위가 가능할까?</h2>
       <div class="lcb-map-row">
       <figure class="lcb-figure lcb-map">
@@ -512,7 +536,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       <div class="lcb-stat lcb-anim">
         <dl class="lcb-stat-main">
           <dt>누적 인증 농가</dt>
-          <dd class="lcb-stat-big">219<small>호</small></dd>
+          <dd class="lcb-stat-big"><span class="lcb-roll">219</span><small>호</small></dd>
           <dd class="lcb-share">
             <span class="lcb-bar-track" aria-hidden="true"><span class="lcb-bar-fill" style="--t:26%"></span></span>
             <span class="lcb-share-cap"><span>전남광주 219호</span><span>전국 851호</span></span>
@@ -691,6 +715,34 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     });
   }, { threshold:0.3 });
   bars.forEach(function(el){ barIO.observe(el); });
+
+  /* 스크롤 등장: 나브 아래 섹션의 요소가 화면에 들어오면 아래에서 올라오며 나타남 */
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var nav = wrap.querySelector('.lcb-nav');
+  if(!nav) return;
+  var rvSel = [
+    '.lcb-group > .lcb-kicker', '.lcb-group > .lcb-kick-row', '.lcb-group > .lcb-h1', '.lcb-group > .lcb-h2',
+    '.lcb-group > .lcb-lead', '.lcb-group > .lcb-mark-head', '.lcb-box > .lcb-row', '.lcb-map-row > .lcb-figure',
+    '.lcb-map-text > .lcb-lead', '.lcb-group > .lcb-stat', '.lcb-kind-card', '.lcb-group > .lcb-block',
+    '.lcb-group > .lcb-prod-row', '.lcb-benefit',
+    '.lcb-foot-title', '.lcb-foot-text', '.lcb-tags'
+  ].join(',');
+  var rvs = [];
+  wrap.querySelectorAll(rvSel).forEach(function(el){
+    if(nav.compareDocumentPosition(el) & 4){ el.classList.add('lcb-rv'); rvs.push(el); }   /* 나브보다 뒤에 있는 것만 */
+  });
+  if(!rvs.length) return;
+  wrap.classList.add('lcb-rv-on');
+  var rvIO = new IntersectionObserver(function(entries){
+    var ins = entries.filter(function(en){ return en.isIntersecting; }).map(function(en){ return en.target; });
+    ins.sort(function(a,b){ return rvs.indexOf(a) - rvs.indexOf(b); });   /* 같이 들어오면 위에서부터 차례로 */
+    ins.forEach(function(el, i){
+      el.style.setProperty('--rv-d', Math.min(i * 0.1, 0.5) + 's');
+      el.classList.add('is-in');
+      rvIO.unobserve(el);
+    });
+  }, { rootMargin:'0px 0px -8% 0px', threshold:0 });
+  rvs.forEach(function(el){ rvIO.observe(el); });
 })();
 </script>
 
@@ -712,6 +764,51 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     });
   },{threshold:0.3});
   io.observe(hero);
+})();
+</script>
+
+<script>
+(function(){
+  var root=document.querySelector('.contents_div');
+  if(!root)return;
+  var els=root.querySelectorAll('.lcb-roll');
+  if(!els.length)return;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  if(!('IntersectionObserver' in window))return;
+  /* 숫자 텍스트는 HTML 그대로 두고(스크린리더용), 화면에는 굴러가는 숫자 띠를 만든다 */
+  els.forEach(function(el){
+    var txt=(el.textContent||'').replace(/\s/g,'');
+    if(!/^\d+$/.test(txt))return;
+    el.textContent='';
+    var sr=document.createElement('span'); sr.className='lcb-roll-sr'; sr.textContent=txt; el.appendChild(sr);
+    var vis=document.createElement('span'); vis.setAttribute('aria-hidden','true'); vis.style.display='inline-flex'; el.appendChild(vis);
+    for(var i=0;i<txt.length;i++){
+      var d=+txt.charAt(i), loops=1+i, n=0;
+      var col=document.createElement('span'); col.className='lcb-roll-d';
+      var strip=document.createElement('span'); strip.className='lcb-roll-s';
+      for(var k=0;k<loops*10+d+1;k++){ var c=document.createElement('span'); c.textContent=k%10; strip.appendChild(c); n++; }
+      strip.style.setProperty('--to','-'+(n-1)+'em');
+      strip.style.setProperty('--dur',(1.4+i*0.35)+'s');
+      col.setAttribute('data-d',d);
+      col.appendChild(strip); vis.appendChild(col);
+    }
+    /* 칸 폭을 최종 숫자 폭에 맞춰, 멈췄을 때 원래 219와 같은 간격이 되게 */
+    function fit(){
+      var cols=vis.querySelectorAll('.lcb-roll-d');
+      for(var j=0;j<cols.length;j++){
+        var m=document.createElement('span'); m.style.cssText='position:absolute;visibility:hidden;white-space:nowrap';
+        m.textContent=cols[j].getAttribute('data-d'); el.appendChild(m);
+        cols[j].style.width=(m.getBoundingClientRect().width/parseFloat(getComputedStyle(el).fontSize))+'em';
+        el.removeChild(m);
+      }
+    }
+    fit();
+    if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(fit)['catch'](function(){}); }
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(e){ if(e.isIntersecting){ el.classList.add('is-go'); io.disconnect(); } });
+    },{threshold:0.5});
+    io.observe(el);
+  });
 })();
 </script>
 
