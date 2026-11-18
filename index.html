@@ -321,6 +321,9 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 @media (hover:hover) and (pointer:fine){
   .contents_div .lcb-nav-btn:hover{ color:var(--c-lime); }
 }
+@media (max-width:710px){
+  .contents_div .lcb-intro .lcb-br--web{ display:none; }   /* 인트로 리드문: 601~710은 화면 폭대로 줄바꿈 (요청) */
+}
 @media (max-width:600px){
   .contents_div .lcb-wrap{
     --fs-foot:clamp(18px, calc(18px + (100vw - 375px) * 0.0857), 21px);
@@ -422,6 +425,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 <article class="lcb-wrap">
 
+
   <!-- 히어로 -->
   <section class="lcb-hero" aria-label="저탄소 축산 1번지 전남광주통합특별시">
     <div class="cwh-hero" id="cwhHero" style="position:relative;max-width:800px;width:100%;margin:0 auto;aspect-ratio:1600/1580;overflow:hidden">
@@ -458,7 +462,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     <div class="lcb-group">
       <p class="lcb-kicker">이런 것도 1등이라고?</p>
       <h1 class="lcb-h1">저탄소 축산 1번지<br><em>전남광주통합특별시</em></h1>
-      <p class="lcb-lead">우리가 자주 먹는 삼겹살, 한우, 우유를 생산하며 지구의 열을 식히는 착한 농장들이 있습니다. 그것도 전남광주통합특별시에 가장 많이요! 무려 <strong>4년 연속 전국 1위</strong>랍니다. 전국 저탄소 축산물 농가 <strong>4곳 중 1곳</strong>이 여기 있어요. 전남광주통합특별시에.</p>
+      <p class="lcb-lead">우리가 자주 먹는 삼겹살, 한우, 우유를 생산하며 지구의 열을 식히는 착한 농장들이 있습니다.<span class="lcb-br lcb-br--web"></span> 그것도 전남광주통합특별시에 가장 많이요! 무려 <strong>4년 연속 전국 1위</strong>랍니다. 전국 저탄소 축산물 농가<span class="lcb-br lcb-br--web"></span> <strong>4곳 중 1곳</strong>이 여기 있어요. 전남광주통합특별시에.</p>
     </div>
   </section>
 
