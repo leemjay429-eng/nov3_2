@@ -1,0 +1,721 @@
+<!-- 모바일 좌우 패딩 16 -->
+<script>
+if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
+  var s=document.createElement('style');
+  s.textContent='body{margin:0}@media(max-width:700px){.contents_div{padding:0 16px}}@media(max-width:576px){.contents_div br{display:inline!important}}';
+  document.head.appendChild(s);
+}
+</script>
+<script>
+(function(){
+  try{
+    if(!document.querySelector('meta[name="viewport"]')){
+      var m=document.createElement('meta');
+      m.setAttribute('name','viewport');
+      m.setAttribute('content','width=device-width, initial-scale=1');
+      (document.head||document.getElementsByTagName('head')[0]||document.documentElement).appendChild(m);
+    }
+  }catch(e){}
+})();
+</script>
+
+<div class="contents_div">
+<style>
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');font-weight:900;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');font-weight:900;font-display:swap}
+
+/* ===== 변수 (02 10장) ===== */
+.contents_div .lcb-wrap{
+  container-type:inline-size;
+  --fs-h2:clamp(20px, min(23px + (100cqi - 388px) * 0.02185, 22px + (100cqi - 343px) * 0.02223, 20px + (100cqi - 318px) * 0.08), 32px); --fs-foot:29px; --fs-h3:21px;
+  --fs-body:17px; --fs-lead:16px; --fs-info:16px; --fs-cta:16px; --fs-arrow:17px;
+  --fs-nav:16px; --fs-kicker:15px; --fs-num:11px; --num-d:26px; --fs-tagcap:13.5px;
+  --fs-label:13px; --fw-label:700; --fs-check:11px; --fs-caption:11px; --fs-hash:12.5px;
+  --gut:clamp(22px, 6.25%, 50px);
+  --band:clamp(40px, calc(7.9% + 6.8px), 70px);
+  --card-py:30px; --card-px:28px;
+  --kick:32px; --lb-h:24px; --lb-px:11px;
+  --img-ratio:62.5%;
+  /* 페이지 전용 */
+  --fs-stat:calc(var(--fs-h2) * 1.25);
+  --nav-h:70px; --bar-h:14px; --ico:26px; --badge:40px; --kname:96px; --knum:60px; --fs-big:calc(var(--fs-h2) * 2.4); --map-w:46%; --mark-w:99px;
+  --c-ink:#1d2a22; --c-sub:#4b5c51;
+  --c-deep:#1f4a33; --c-deep2:#173a28; --c-leaf:#3f7d4f; --c-lime:#cfe58a;
+  --c-cream:#f6f2e5; --c-mint:#dbe8cc; --c-gray:#fbfbfb; --c-bar:#9cc47f;
+
+  max-width:800px; margin:0 auto;
+  font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:var(--fs-body); line-height:1.6; letter-spacing:-0.02em;
+  color:var(--c-ink); word-break:keep-all;
+}
+.contents_div .lcb-wrap, .contents_div .lcb-wrap *,
+.contents_div .lcb-wrap *::before, .contents_div .lcb-wrap *::after{ box-sizing:border-box; }
+.contents_div .lcb-wrap :where(h1,h2,h3,p,ul,ol,li,dl,dt,dd,figure,table){ margin:0; padding:0; }
+.contents_div .lcb-wrap :where(ul,ol){ list-style:none; }
+.contents_div .lcb-wrap :where(img){ max-width:100%; display:block; border:0; }
+.contents_div .lcb-wrap :where(h1,h2,h3),
+.contents_div .lcb-foot-title{ font-family:'Paperozi','Pretendard',sans-serif; word-break:keep-all; }
+
+/* 조건부 줄바꿈 */
+.contents_div .lcb-br::before{ content:'\A'; white-space:pre; }
+.contents_div .lcb-br--mo,
+.contents_div .lcb-br--mo-wide,
+.contents_div .lcb-br--m420{ display:none; }
+
+/* ===== 공통 섹션 ===== */
+.contents_div .lcb-sec{ width:100%; padding:var(--band) var(--gut); }
+.contents_div .lcb-kicker{
+  display:inline-flex; align-items:center; height:var(--kick); padding:0 1em;
+  border-radius:999px; font-size:var(--fs-kicker); font-weight:700; line-height:1.2; letter-spacing:0.01em;
+  background:var(--c-deep); color:var(--c-cream); white-space:nowrap;
+}
+.contents_div .lcb-h2{
+  margin-top:14px; font-size:var(--fs-h2); font-weight:800; line-height:1.35; letter-spacing:-0.01em;
+  outline:none;
+}
+.contents_div .lcb-lead{ margin-top:16px; font-size:var(--fs-lead); line-height:1.6; color:var(--c-sub); }
+.contents_div .lcb-lead + .lcb-lead{ margin-top:10px; }
+.contents_div .lcb-lead strong{ color:var(--c-ink); font-weight:700; }
+.contents_div .lcb-h3{ font-size:var(--fs-h3); font-weight:700; line-height:1.45; }
+
+/* ===== 히어로 (모션) ===== */
+.contents_div .lcb-hero{ width:100%; }
+.contents_div .cwh-hero{position:relative;max-width:800px;width:100%;margin:0 auto;aspect-ratio:1600/1580;overflow:hidden}
+.contents_div .cwh-hero img{position:absolute;top:0;left:0;width:100%;height:auto;display:block;max-width:none}
+/* 요소 레이어는 1650px(오른쪽 50px 여유) - 왼쪽 기준, 오른쪽은 잘림 */
+.contents_div .cwh-hero img.cwh-ppl,.contents_div .cwh-hero img.cwh-medal{width:103.125%}
+
+/* 대기 상태 (JS가 cwh-ready를 붙였을 때만) - 배경은 처음부터 보임 */
+.contents_div .cwh-hero.cwh-ready .cwh-a{opacity:0}
+
+/* 재생 */
+.contents_div .cwh-hero.cwh-play .cwh-t1{animation:cwhRiseUp .75s cubic-bezier(.22,1,.36,1) .05s both}
+.contents_div .cwh-hero.cwh-play .cwh-t3{animation:cwhRiseUp .75s cubic-bezier(.22,1,.36,1) .25s both}
+.contents_div .cwh-hero.cwh-play .cwh-bub{animation:cwhPop .5s cubic-bezier(.34,1.7,.64,1) .85s both,cwhBob 2.8s ease-in-out 1.35s infinite}
+.contents_div .cwh-hero.cwh-play .cwh-ppl{animation:cwhJump .75s cubic-bezier(.22,1,.36,1) .35s both,cwhBobS 3.4s ease-in-out 1.1s infinite}
+.contents_div .cwh-hero.cwh-play .cwh-medal{animation:cwhSwingIn 1.7s linear .6s both,cwhSway 3.4s cubic-bezier(.45,0,.55,1) 2.3s infinite}
+
+@keyframes cwhRiseUp{0%{opacity:1;transform:translateY(14%)}100%{opacity:1;transform:translateY(0)}}
+@keyframes cwhBob{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:1;transform:translateY(-.8%)}}
+@keyframes cwhBobS{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:1;transform:translateY(.7%)}}
+@keyframes cwhSway{0%,100%{opacity:1;transform:rotate(2.5deg)}50%{opacity:1;transform:rotate(-2.5deg)}}
+@keyframes cwhPop{0%{opacity:0;transform:scale(0)}100%{opacity:1;transform:scale(1)}}
+@keyframes cwhJump{0%{opacity:1;transform:translateY(75%)}100%{opacity:1;transform:translateY(0)}}
+@keyframes cwhSwingIn{
+  0%{opacity:1;transform:rotate(-62deg);animation-timing-function:cubic-bezier(.33,0,.25,1)}
+  40%{opacity:1;transform:rotate(8deg);animation-timing-function:cubic-bezier(.45,0,.55,1)}
+  64%{opacity:1;transform:rotate(-4deg);animation-timing-function:cubic-bezier(.45,0,.55,1)}
+  100%{opacity:1;transform:rotate(2.5deg)}
+}
+
+/* ===== 앵커 내비 ===== */
+.contents_div .lcb-nav{ width:100%; padding:0 var(--gut); background:var(--c-deep); }
+.contents_div .lcb-nav-list{ display:grid; grid-template-columns:repeat(4,1fr); }
+.contents_div .lcb-nav-list li{ position:relative; }
+.contents_div .lcb-nav-list li + li::before{
+  content:''; position:absolute; left:0; top:50%; width:1px; height:14px; margin-top:-7px;
+  background:rgba(246,242,229,.35);
+}
+.contents_div .lcb-nav-btn{
+  display:flex; align-items:center; justify-content:center; width:100%; min-height:var(--nav-h);
+  padding:0 4px; border:0; background:none; cursor:pointer; -webkit-appearance:none; appearance:none;
+  font:inherit; font-size:var(--fs-nav); font-weight:700; line-height:1.4; letter-spacing:-0.03em;
+  color:rgba(246,242,229,.88); white-space:nowrap; transition:color .2s;
+}
+.contents_div .lcb-nav-btn span{ position:relative; padding:4px 0; }
+.contents_div .lcb-nav-btn span::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:2px; border-radius:2px;
+  background:var(--c-lime); transform:scaleX(0); transition:transform .25s;
+}
+.contents_div .lcb-nav-btn.is-on{ color:var(--c-lime); }
+.contents_div .lcb-nav-btn.is-on span::after{ transform:scaleX(1); }
+.contents_div .lcb-nav-btn:focus{ outline:none; }
+.contents_div .lcb-nav-btn:active{ color:var(--c-lime); }
+
+/* ===== 인트로 ===== */
+.contents_div .lcb-intro{ background:var(--c-cream); }
+.contents_div .lcb-h1{ margin-top:14px; font-size:var(--fs-h2); font-weight:800; line-height:1.35; letter-spacing:-0.01em; }
+.contents_div .lcb-h1 em{ font-style:normal; color:var(--c-leaf); }
+
+/* ===== 1. 인증제란 (어두운 배경) ===== */
+.contents_div #lcb-sec1{ background:var(--c-deep); color:var(--c-cream); }
+.contents_div #lcb-sec1 .lcb-kicker{ background:var(--c-lime); color:var(--c-deep2); }
+.contents_div #lcb-sec1 .lcb-lead{ color:rgba(246,242,229,.85); }
+.contents_div .lcb-box{ margin-top:28px; border-top:1px solid rgba(246,242,229,.28); }
+.contents_div .lcb-row{
+  display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:start;
+  padding:20px 0; border-bottom:1px solid rgba(246,242,229,.28);
+}
+.contents_div .lcb-lb{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:0 var(--lb-px); height:var(--lb-h); margin-top:calc((var(--fs-info) * 1.5 - var(--lb-h)) / 2);
+  border-radius:999px; font-size:var(--fs-label); font-weight:var(--fw-label); line-height:1; white-space:nowrap;
+  background:rgba(207,229,138,.16); color:var(--c-lime); border:1px solid rgba(207,229,138,.55);
+}
+.contents_div .lcb-row dd{ font-size:var(--fs-info); line-height:1.5; }
+
+/* ===== 2. 1위 비결 ===== */
+.contents_div #lcb-sec2{ background:var(--c-gray); }
+.contents_div .lcb-figure{ position:relative; margin-top:28px; }
+.contents_div .lcb-fig{ position:relative; width:100%; overflow:hidden; background:#eee; }
+.contents_div .lcb-cap{ position:absolute; right:0; bottom:0; padding:6px 10px; font-size:var(--fs-caption); line-height:1.35; color:var(--c-leaf); white-space:nowrap; }
+.contents_div .lcb-fig::before{ content:''; display:block; padding-top:var(--img-ratio); }
+.contents_div .lcb-fig img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; color:transparent; }
+.contents_div .lcb-map-row{ display:grid; grid-template-columns:1fr 42.5%; gap:36px; align-items:center; margin:28px 0 0; padding:var(--card-py) 7%; background:#fff; border:1px solid rgba(31,74,51,.18); border-radius:16px; }
+.contents_div .lcb-map-row .lcb-figure{ margin-top:0; }
+.contents_div .lcb-fig--map{ background:#fff; }
+.contents_div .lcb-fig--map::before{ padding-top:136.41%; }   /* 원본 747×1019 */
+.contents_div .lcb-fig--map img{ object-fit:contain; transform:scale(1.05); }
+/* 전남 강조: 지도 이미지와 같은 비율·위치의 레이어 위에 배지 둘레 글로우 + 물결 */
+.contents_div .lcb-map-layer{ position:absolute; top:0; left:50%; height:100%; aspect-ratio:747/1019; transform:translateX(-50%) scale(1.05); pointer-events:none; }
+.contents_div .lcb-map-pin{ position:absolute; left:var(--pin-x); top:var(--pin-y); width:var(--pin-d); aspect-ratio:1; border-radius:50%; transform:translate(-50%,-50%); --pin-x:30.57%; --pin-y:71.81%; --pin-d:7.3%; }
+.contents_div .lcb-map-pin::before,
+.contents_div .lcb-map-pin::after{ content:''; position:absolute; inset:0; border-radius:50%; border:2px solid rgba(255,214,70,.6); opacity:0; }
+.contents_div .lcb-anim.is-on .lcb-map-pin{ animation:lcbHalo 3s ease-in-out infinite; }
+.contents_div .lcb-anim.is-on .lcb-map-pin::before{ animation:lcbRipple 3s linear infinite; }
+.contents_div .lcb-anim.is-on .lcb-map-pin::after{ animation:lcbRipple 3s linear .35s infinite; }
+@keyframes lcbHalo{ 0%,100%{ box-shadow:0 0 6px 2px rgba(255,224,100,.4); } 50%{ box-shadow:0 0 22px 9px rgba(255,224,100,.65); } }
+@keyframes lcbRipple{ 0%{ opacity:.85; transform:scale(1); animation-timing-function:cubic-bezier(.2,.6,.3,1); } 60%,100%{ opacity:0; transform:scale(2.7); } }   /* 1.8초 퍼지고 나머지는 쉼 */
+.contents_div .lcb-map-text{ padding:10px 0 10px 28px; border-left:2px solid rgba(63,125,79,.35); transform:translateY(-18px); }
+.contents_div .lcb-map-text .lcb-lead:first-child{ margin-top:0; }
+.contents_div .lcb-map-text .lcb-lead + .lcb-lead{ margin-top:14px; }
+.contents_div .lcb-nw{ white-space:nowrap; }
+
+/* ===== 3. 숫자로 보기 ===== */
+.contents_div #lcb-sec3{ background:var(--c-mint); }
+.contents_div #lcb-sec3 .lcb-kicker{ background:var(--c-deep); }
+.contents_div .lcb-tag{
+  display:inline-flex; align-items:center; align-self:flex-start; margin-top:10px;
+  height:var(--lb-h); padding:0 var(--lb-px); border-radius:999px;
+  font-size:var(--fs-label); font-weight:700; line-height:1; white-space:nowrap;
+  background:var(--c-deep); color:var(--c-lime);
+}
+/* 핵심 지표 패널 */
+.contents_div .lcb-stat{ display:grid; grid-template-columns:1.2fr 1fr; margin-top:28px; border-radius:16px; overflow:hidden; background:var(--c-deep); color:var(--c-cream); }
+.contents_div .lcb-stat-main{ display:flex; flex-direction:column; justify-content:center; padding:calc(var(--card-py) + 6px) calc(var(--card-px) + 4px); }
+.contents_div .lcb-stat dt{ font-size:var(--fs-info); font-weight:700; line-height:1.5; color:rgba(246,242,229,.78); white-space:nowrap; }
+.contents_div .lcb-stat-big{ margin-top:6px; font-size:var(--fs-big); font-weight:800; line-height:1; letter-spacing:-0.03em; color:var(--c-lime); white-space:nowrap; }
+.contents_div .lcb-stat-big small{ font-size:.42em; font-weight:700; margin-left:4px; letter-spacing:0; }
+.contents_div .lcb-share{ margin-top:26px; }
+.contents_div .lcb-share .lcb-bar-track{ background:rgba(246,242,229,.16); }
+.contents_div .lcb-share .lcb-bar-fill{ background:var(--c-lime); }
+.contents_div .lcb-share-cap{ display:flex; justify-content:space-between; gap:8px; margin-top:8px; font-size:var(--fs-tagcap); font-weight:600; line-height:1.35; color:rgba(246,242,229,.72); white-space:nowrap; }
+.contents_div .lcb-share-cap span:first-child{ color:var(--c-lime); }
+.contents_div .lcb-stat-side{ display:grid; grid-template-rows:1fr 1fr; border-left:1px solid rgba(246,242,229,.18); background:rgba(0,0,0,.12); }
+.contents_div .lcb-stat-item{ display:flex; flex-direction:column; justify-content:center; padding:var(--card-py) var(--card-px); }
+.contents_div .lcb-stat-item + .lcb-stat-item{ border-top:1px solid rgba(246,242,229,.18); }
+.contents_div .lcb-stat-item dd{ display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 12px; margin-top:4px; }
+.contents_div .lcb-stat-num{ font-size:var(--fs-stat); font-weight:800; line-height:1.15; letter-spacing:-0.02em; color:var(--c-cream); white-space:nowrap; }
+.contents_div .lcb-stat-num small{ font-size:.55em; font-weight:700; margin-left:2px; }
+.contents_div .lcb-stat .lcb-tag{ margin-top:0; align-self:auto; transform:translateY(-12px); background:var(--c-lime); color:var(--c-deep2); }
+.contents_div .lcb-stat-sub{ font-size:var(--fs-tagcap); font-weight:600; line-height:1.35; color:rgba(246,242,229,.72); white-space:nowrap; }
+
+/* 축종별: 카드 2개 나란히, 가로 막대 */
+.contents_div .lcb-kind-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+.contents_div .lcb-kind-card{ padding:var(--card-py) var(--card-px); background:#fff; border:1px solid rgba(31,74,51,.12); border-radius:16px; }
+.contents_div .lcb-kind-card .lcb-block-head{ min-height:calc(var(--fs-h3) * 1.45); }
+.contents_div .lcb-kinds{ margin-top:14px; border-top:1px solid rgba(31,74,51,.2); }
+.contents_div .lcb-kinds li{ display:grid; grid-template-columns:var(--kname) 1fr var(--knum); align-items:center; gap:12px; padding:14px 0; }
+.contents_div .lcb-kinds li + li{ border-top:1px dashed rgba(31,74,51,.25); }
+.contents_div .lcb-kind-name{ display:flex; align-items:center; gap:8px; font-size:var(--fs-info); font-weight:700; line-height:1.3; color:var(--c-ink); white-space:nowrap; }
+.contents_div .lcb-kind-badge{ flex:0 0 auto; display:flex; align-items:center; justify-content:center; width:var(--badge); height:var(--badge); border-radius:50%; background:var(--c-cream); border:1px solid rgba(63,125,79,.25); }
+.contents_div .lcb-kind-num{ font-size:var(--fs-h3); font-weight:800; line-height:1.3; color:var(--c-deep); text-align:right; white-space:nowrap; }
+
+.contents_div .lcb-block{ margin-top:40px; }
+.contents_div .lcb-block-head{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.contents_div .lcb-block-head .lcb-tag{ margin-top:0; }
+
+.contents_div .lcb-ico{ flex:0 0 auto; display:block; width:var(--ico); height:var(--ico); background:no-repeat center / contain; }
+.contents_div .lcb-ico--pig{ background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 48 48%22%3E%3Cpath d=%22M9 8l9 7-8 6z%22 fill=%22%23e9899a%22/%3E%3Cpath d=%22M39 8l-9 7 8 6z%22 fill=%22%23e9899a%22/%3E%3Ccircle cx=%2224%22 cy=%2226%22 r=%2217%22 fill=%22%23f5b3be%22/%3E%3Cellipse cx=%2224%22 cy=%2231%22 rx=%228%22 ry=%226%22 fill=%22%23e9899a%22/%3E%3Cellipse cx=%2221%22 cy=%2231%22 rx=%221.6%22 ry=%222.2%22 fill=%22%237a3a46%22/%3E%3Cellipse cx=%2227%22 cy=%2231%22 rx=%221.6%22 ry=%222.2%22 fill=%22%237a3a46%22/%3E%3Ccircle cx=%2217%22 cy=%2221%22 r=%222%22 fill=%22%233a2a2c%22/%3E%3Ccircle cx=%2231%22 cy=%2221%22 r=%222%22 fill=%22%233a2a2c%22/%3E%3C/svg%3E"); }
+.contents_div .lcb-ico--hanwoo{ background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 48 48%22%3E%3Cpath d=%22M13 12c-3-1-5-5-4-9 2 3 5 4 8 5z%22 fill=%22%23efe2c4%22/%3E%3Cpath d=%22M35 12c3-1 5-5 4-9-2 3-5 4-8 5z%22 fill=%22%23efe2c4%22/%3E%3Cellipse cx=%227%22 cy=%2220%22 rx=%226%22 ry=%223.5%22 fill=%22%23a85a26%22 transform=%22rotate%28-20 7 20%29%22/%3E%3Cellipse cx=%2241%22 cy=%2220%22 rx=%226%22 ry=%223.5%22 fill=%22%23a85a26%22 transform=%22rotate%2820 41 20%29%22/%3E%3Cpath d=%22M11 18c0-6 6-10 13-10s13 4 13 10v12c0 8-6 13-13 13s-13-5-13-13z%22 fill=%22%23c06d30%22/%3E%3Cellipse cx=%2224%22 cy=%2235%22 rx=%2210%22 ry=%227%22 fill=%22%23eab98d%22/%3E%3Cellipse cx=%2220.5%22 cy=%2235%22 rx=%221.6%22 ry=%222.2%22 fill=%22%236b3a1c%22/%3E%3Cellipse cx=%2227.5%22 cy=%2235%22 rx=%221.6%22 ry=%222.2%22 fill=%22%236b3a1c%22/%3E%3Ccircle cx=%2218%22 cy=%2223%22 r=%222%22 fill=%22%232e2018%22/%3E%3Ccircle cx=%2230%22 cy=%2223%22 r=%222%22 fill=%22%232e2018%22/%3E%3C/svg%3E"); }
+.contents_div .lcb-ico--dairy{ background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 48 48%22%3E%3Cpath d=%22M13 12c-3-1-5-5-4-9 2 3 5 4 8 5z%22 fill=%22%23d9d2c3%22/%3E%3Cpath d=%22M35 12c3-1 5-5 4-9-2 3-5 4-8 5z%22 fill=%22%23d9d2c3%22/%3E%3Cellipse cx=%227%22 cy=%2220%22 rx=%226%22 ry=%223.5%22 fill=%22%232f2f2f%22 transform=%22rotate%28-20 7 20%29%22/%3E%3Cellipse cx=%2241%22 cy=%2220%22 rx=%226%22 ry=%223.5%22 fill=%22%23f2f2f2%22 stroke=%22%23cfcfcf%22 transform=%22rotate%2820 41 20%29%22/%3E%3Cpath d=%22M11 18c0-6 6-10 13-10s13 4 13 10v12c0 8-6 13-13 13s-13-5-13-13z%22 fill=%22%23fbfbfb%22 stroke=%22%23d6d6d6%22/%3E%3Cpath d=%22M12 15c2-5 7-7 11-6-1 4-2 9-7 11-2 1-4-1-4-5z%22 fill=%22%232f2f2f%22/%3E%3Cpath d=%22M33 20c3 0 4 3 3 6-3 1-6-1-6-3s1-3 3-3z%22 fill=%22%232f2f2f%22/%3E%3Cellipse cx=%2224%22 cy=%2235%22 rx=%2210%22 ry=%227%22 fill=%22%23f4b6c0%22/%3E%3Cellipse cx=%2220.5%22 cy=%2235%22 rx=%221.6%22 ry=%222.2%22 fill=%22%238a4a55%22/%3E%3Cellipse cx=%2227.5%22 cy=%2235%22 rx=%221.6%22 ry=%222.2%22 fill=%22%238a4a55%22/%3E%3Ccircle cx=%2218%22 cy=%2223%22 r=%222%22 fill=%22%23f4f4f4%22/%3E%3Ccircle cx=%2218%22 cy=%2223%22 r=%221.6%22 fill=%22%231e1e1e%22/%3E%3Ccircle cx=%2230%22 cy=%2223%22 r=%222%22 fill=%22%231e1e1e%22/%3E%3C/svg%3E"); }
+.contents_div .lcb-bar-track{ position:relative; display:block; width:100%; height:var(--bar-h); border-radius:999px; overflow:hidden; background:rgba(31,74,51,.1); }
+.contents_div .lcb-bar-fill{ position:absolute; left:0; top:0; bottom:0; width:var(--t); border-radius:999px; background:var(--c-bar); transform-origin:left center; }
+.contents_div .lcb-kinds--new .lcb-bar-fill{ background:var(--c-deep); }
+.contents_div .lcb-anim .lcb-bar-fill{ transform:scaleX(0); transition:transform .9s cubic-bezier(.2,.7,.2,1); }
+.contents_div .lcb-anim.is-on .lcb-bar-fill{ transform:scaleX(1); }
+
+/* 지역별: 카드 대신 점선 리더 목록 */
+.contents_div .lcb-region{ display:grid; grid-template-columns:1fr 1fr; column-gap:48px; margin-top:14px; padding:6px 0; border-top:2px solid var(--c-deep); }
+.contents_div .lcb-region li{ display:flex; align-items:baseline; gap:10px; padding:12px 0; }
+.contents_div .lcb-region li::before{ content:''; order:1; flex:1 1 auto; min-width:16px; align-self:center; border-bottom:2px dotted rgba(31,74,51,.35); transform:translateY(2px); }
+.contents_div .lcb-region-name{ order:0; font-size:var(--fs-info); font-weight:700; line-height:1.5; color:var(--c-sub); white-space:nowrap; }
+.contents_div .lcb-region-num{ order:2; font-size:var(--fs-h3); font-weight:800; line-height:1.3; color:var(--c-deep); white-space:nowrap; }
+.contents_div .lcb-region-num small{ font-size:var(--fs-info); font-weight:600; color:var(--c-sub); }
+
+/* ===== 4. 인증마크 ===== */
+.contents_div #lcb-sec4{ background:var(--c-cream); }
+.contents_div .lcb-mark-head{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:14px; }
+.contents_div .lcb-h2.lcb-mark-title{ min-width:0; margin-top:0; }
+.contents_div .lcb-mark-box{ flex:0 0 auto; width:var(--mark-w); transform:translate(-15px,-7px); }
+.contents_div .lcb-mark-fig{ position:relative; width:100%; overflow:hidden; background:transparent; }
+.contents_div .lcb-mark-fig::before{ content:''; display:block; padding-top:100%; }
+.contents_div .lcb-mark-fig img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; color:transparent; }
+.contents_div .lcb-prod-row{ display:grid; grid-template-columns:49% 1fr; gap:48px; align-items:center; margin-top:24px; padding:0 3%; }
+.contents_div .lcb-prod-row .lcb-lead{ margin-top:0; transform:translateY(-20px); }
+.contents_div .lcb-fig--prod::before{ padding-top:62.5%; }   /* 16:10 */
+.contents_div .lcb-map .lcb-cap{ position:static; display:block; margin-top:10px; padding:0; text-align:center; }
+.contents_div .lcb-cap.lcb-cap--out{ position:static; display:block; margin-top:6px; padding:0; text-align:right; }
+
+.contents_div .lcb-benefits{ margin-top:32px; border-top:2px solid var(--c-deep); }
+.contents_div .lcb-benefit{ padding:24px 0; border-bottom:1px solid rgba(31,74,51,.2); }
+.contents_div .lcb-benefit-head{ display:flex; align-items:center; gap:12px; }
+.contents_div .lcb-num{
+  flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center;
+  width:var(--num-d); height:var(--num-d); border-radius:50%;
+  background:var(--c-deep); color:var(--c-lime); font-size:var(--fs-num); font-weight:800; line-height:1;
+}
+.contents_div .lcb-benefit p{ margin-top:10px; padding-left:calc(var(--num-d) + 12px); font-size:var(--fs-body); line-height:1.6; color:var(--c-sub); }
+
+/* ===== 푸터 ===== */
+.contents_div .lcb-foot{ background:var(--c-deep2); color:var(--c-cream); text-align:center; }
+.contents_div .lcb-foot-title{ font-size:var(--fs-foot); font-weight:800; line-height:1.4; letter-spacing:-0.01em; }
+.contents_div .lcb-foot-text{ margin-top:14px; font-size:var(--fs-lead); line-height:1.6; color:rgba(246,242,229,.82); }
+.contents_div .lcb-tags{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:47px; padding-top:43px; border-top:1px solid rgba(246,242,229,.25); }
+.contents_div .lcb-tags li{
+  display:inline-flex; align-items:center; padding:7px 12px; border-radius:999px;
+  border:1px solid rgba(246,242,229,.3); font-size:var(--fs-tagcap); font-weight:700; line-height:1.25;
+  color:rgba(246,242,229,.85);
+}
+
+/* ===== 반응형 ===== */
+@media (hover:hover) and (pointer:fine){
+  .contents_div .lcb-nav-btn:hover{ color:var(--c-lime); }
+}
+@media (max-width:600px){
+  .contents_div .lcb-wrap{
+    --fs-foot:clamp(18px, calc(18px + (100vw - 375px) * 0.0857), 21px);
+    --fs-h3:clamp(16px, calc(16px + (100vw - 375px) * 0.0286), 17px);
+    --fs-body:clamp(13.5px, calc(13.5px + (100vw - 375px) * 0.0143), 14px);
+    --fs-lead:var(--fs-body); --fs-info:var(--fs-body); --fs-cta:var(--fs-body);
+    --fs-arrow:15px; --fs-nav:12px; --fs-kicker:11.5px; --fs-num:10px; --num-d:18px; --fs-tagcap:10px;
+    --fs-label:10px; --fw-label:400; --fs-check:10px; --fs-caption:10px;
+    --fs-hash:clamp(10.5px, calc(10.5px + (100vw - 375px) * 0.0143), 11px);
+    --gut:22px;
+    --card-py:22px; --card-px:17px;
+    --kick:22px; --lb-h:17px; --lb-px:7px;
+    --img-ratio:75%;
+    --nav-h:48px; --bar-h:10px; --ico:20px; --badge:32px; --kname:78px; --knum:46px; --fs-big:calc(var(--fs-h2) * 2.3); --mark-w:72px;
+  }
+  .contents_div .lcb-br--web{ display:none; }
+  .contents_div .lcb-br--mo,
+  .contents_div .lcb-br--mo-wide{ display:inline; }
+  .contents_div .lcb-h2,
+  .contents_div .lcb-h1{ line-height:1.4; margin-top:12px; }
+  .contents_div .lcb-mark-head{ margin-top:12px; }
+  .contents_div .lcb-mark-box{ transform:translateY(-10px); }
+  .contents_div .lcb-fig--map{ border:1px solid rgba(63,125,79,.35); border-radius:12px; }
+  .contents_div .lcb-map .lcb-cap{ position:absolute; right:6px; bottom:6px; margin-top:0; padding:5px 8px; text-align:right; }
+  .contents_div .lcb-h3{ line-height:1.5; }
+  .contents_div .lcb-kicker{ line-height:1; }
+  .contents_div .lcb-nav-list li + li::before{ height:10px; margin-top:-5px; }
+  .contents_div .lcb-nav-btn{ line-height:1.35; }
+  .contents_div .lcb-lead{ margin-top:12px; }
+  .contents_div .lcb-box{ margin-top:22px; }
+  .contents_div .lcb-row{ grid-template-columns:1fr; gap:8px; padding:16px 0; }
+  .contents_div .lcb-lb{ justify-self:start; margin-top:0; }
+  .contents_div .lcb-figure{ margin-top:22px; }
+  .contents_div .lcb-cap{ padding:5px 8px; }
+  .contents_div .lcb-map-row{ grid-template-columns:1fr; gap:18px; margin-top:22px; }
+  .contents_div .lcb-map-row{ max-width:none; margin-top:22px; padding:0; background:none; border:0; border-radius:0; }
+  .contents_div .lcb-map-text{ padding:0; border-left:0; transform:none; }
+  .contents_div .lcb-map-text .lcb-lead + .lcb-lead{ margin-top:10px; }
+  .contents_div .lcb-fig--map::before{ padding-top:125%; }
+  .contents_div .lcb-fig--map img{ transform:none; }   /* 4:5, 남는 곳은 흰색 */
+  .contents_div .lcb-map-layer{ transform:translateX(-50%); }
+  .contents_div .lcb-map-pin{ --pin-x:29.87%; }
+  .contents_div .lcb-stat{ grid-template-columns:1fr; margin-top:22px; border-radius:12px; }
+  .contents_div .lcb-stat-main{ padding:calc(var(--card-py) + 4px) var(--card-px) var(--card-py); }
+  .contents_div .lcb-stat-big{ margin-top:4px; }
+  .contents_div .lcb-share{ margin-top:18px; }
+  .contents_div .lcb-share-cap{ margin-top:6px; }
+  .contents_div .lcb-stat-side{ grid-template-rows:none; grid-template-columns:1fr 1fr; border-left:0; border-top:1px solid rgba(246,242,229,.18); }
+  .contents_div .lcb-stat-item{ justify-content:flex-start; padding:var(--card-py) var(--card-px); }
+  .contents_div .lcb-stat-item + .lcb-stat-item{ border-top:0; border-left:1px solid rgba(246,242,229,.18); }
+  .contents_div .lcb-stat .lcb-tag{ transform:none; }
+  .contents_div .lcb-tag{ height:21px; padding:0 9px 4px; }   /* 글자 10px 그대로, 캡슐만 키움 · 아래 4px로 글자 2px 위로 */
+  .contents_div .lcb-stat-item dd{ flex-direction:column; align-items:flex-start; gap:6px; margin-top:2px; }
+  .contents_div .lcb-block{ margin-top:32px; }
+  .contents_div .lcb-kind-grid{ grid-template-columns:1fr; gap:12px; margin-top:12px; }
+  .contents_div .lcb-kind-card{ border-radius:12px; }
+  .contents_div .lcb-kinds{ margin-top:10px; }
+  .contents_div .lcb-kinds li{ gap:10px; padding:11px 0; }
+  .contents_div .lcb-kind-name{ gap:6px; }
+  .contents_div .lcb-region{ grid-template-columns:1fr; padding:4px 0; }
+  .contents_div .lcb-region li{ gap:8px; padding:10px 0; }
+  .contents_div .lcb-prod-row{ grid-template-columns:1fr; gap:16px; margin-top:16px; padding:0; }
+  .contents_div .lcb-prod-row .lcb-lead{ transform:none; }
+  .contents_div .lcb-benefits{ margin-top:24px; }
+  .contents_div .lcb-benefit{ padding:18px 0; }
+  .contents_div .lcb-benefit-head{ gap:10px; align-items:flex-start; }
+  .contents_div .lcb-num{ margin-top:calc((var(--fs-h3) * 1.5 - var(--num-d)) / 2); }   /* h3 첫 줄 가운데 */
+  .contents_div .lcb-benefit p{ margin-top:8px; padding-left:calc(var(--num-d) + 10px); }
+  .contents_div .lcb-foot-title{ line-height:1.42; }
+  .contents_div .lcb-foot-text{ margin-top:10px; max-width:340px; margin-left:auto; margin-right:auto; }
+  .contents_div .lcb-tags{ gap:4px 12px; margin-top:37px; padding-top:33px; }
+  .contents_div .lcb-tags li{ padding:0; border:0; border-radius:0; background:none; font-size:var(--fs-hash); font-weight:400; line-height:1.35; }
+}
+@media (max-width:480px){
+  .contents_div .lcb-wrap{
+    --fs-nav:clamp(11.5px, calc(11.5px + (100vw - 375px) * 0.0286), 12.5px);
+    --gut:15px;
+    --nav-h:44px;
+  }
+}
+@media (max-width:420px){
+  .contents_div .lcb-wrap{
+    --band:40px;
+    --card-py:19px; --card-px:14px;
+  }
+  .contents_div .lcb-br--mo-wide{ display:none; }
+  .contents_div .lcb-br--m420{ display:inline; }
+  .contents_div .lcb-foot-text{ max-width:none; }
+}
+/* 모션 줄이기 설정 */
+@media (prefers-reduced-motion:reduce){
+  .contents_div .cwh-hero img{animation:none!important;transform:none!important;opacity:1!important}
+  .contents_div .lcb-map-pin,.contents_div .lcb-map-pin::before,.contents_div .lcb-map-pin::after{animation:none!important}
+  .contents_div .lcb-map-pin{box-shadow:0 0 16px 6px rgba(255,224,100,.55)}
+}
+</style>
+
+<article class="lcb-wrap">
+
+  <!-- TEST: 확인 후 이 줄 삭제 -->
+ <div class="jngj-test-spacer" aria-hidden="true" style="height:900px;max-width:800px;margin:auto;display:grid;place-items:center;border:1px solid #cb9;background:linear-gradient(to top right,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)),linear-gradient(to top left,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)) #fffdef;font:700 16px sans-serif;color:#7E5E50"><b style="padding:10px 20px;background:#fffdef;border:1px solid #cb9;border-radius:99px">
+  테스트 영역 · 아래로 스크롤 ↓</b></div>
+<!-- TEST: 확인 후 이 줄 삭제  -->
+
+  <!-- 히어로 -->
+  <section class="lcb-hero" aria-label="저탄소 축산 1번지 전남광주통합특별시">
+    <div class="cwh-hero" id="cwhHero" style="position:relative;max-width:800px;width:100%;margin:0 auto;aspect-ratio:1600/1580;overflow:hidden">
+      <!-- 배경 (모션 없음) -->
+      <img class="cwh-bg" src="img/히어로배경.webp" alt="저탄소 축산 1번지 전남광주통합특별시 - 초원 위의 젖소와 한우" fetchpriority="high" loading="eager" style="position:absolute;top:0;left:0;width:100%;height:auto;display:block">
+
+      <!-- 요소: 사람 / 메달 -->
+      <img class="cwh-a cwh-ppl" src="img/히어로요소.webp" alt="" fetchpriority="high" loading="eager" style="position:absolute;top:0;left:0;width:103.125%;max-width:none;height:auto;display:block;clip-path:inset(0 46.667% 0 0);transform-origin:30% 100%">
+      <img class="cwh-a cwh-medal" src="img/히어로요소.webp" alt="" fetchpriority="high" loading="eager" style="position:absolute;top:0;left:0;width:103.125%;max-width:none;height:auto;display:block;clip-path:inset(0 0 0 55.152%);transform-origin:96.97% 46%">
+
+      <!-- 텍스트: 말풍선 / 1줄 / 2줄 -->
+      <img class="cwh-a cwh-bub" src="img/히어로텍스트.webp" alt="" fetchpriority="high" loading="eager" style="position:absolute;top:0;left:0;width:100%;height:auto;display:block;clip-path:inset(0 0 84.177% 0);transform-origin:79% 16%">
+      <div class="cwh-mask" style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;clip-path:inset(15.823% 0 71.076% 0)">
+        <img class="cwh-a cwh-t1" src="img/히어로텍스트.webp" alt="" fetchpriority="high" loading="eager" style="position:absolute;top:0;left:0;width:100%;height:auto;display:block;clip-path:inset(15.823% 0 71.076% 0);transform-origin:50% 22%">
+      </div>
+      <div class="cwh-mask" style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;clip-path:inset(28.924% 0 57% 0)">
+        <img class="cwh-a cwh-t3" src="img/히어로텍스트.webp" alt="" fetchpriority="high" loading="eager" style="position:absolute;top:0;left:0;width:100%;height:auto;display:block;clip-path:inset(28.924% 0 57% 0);transform-origin:50% 36%">
+      </div>
+    </div>
+  </section>
+
+  <!-- 앵커 내비 -->
+  <nav class="lcb-nav" aria-label="본문 바로가기">
+    <ul class="lcb-nav-list">
+      <li><button type="button" class="lcb-nav-btn" data-go="lcb-sec1"><span>인증제란?</span></button></li>
+      <li><button type="button" class="lcb-nav-btn" data-go="lcb-sec2"><span>4년 연속 1위</span></button></li>
+      <li><button type="button" class="lcb-nav-btn" data-go="lcb-sec3"><span>인증 현황</span></button></li>
+      <li><button type="button" class="lcb-nav-btn" data-go="lcb-sec4"><span>인증마크</span></button></li>
+    </ul>
+  </nav>
+
+  <!-- 인트로 -->
+  <section class="lcb-sec lcb-intro">
+    <div class="lcb-group">
+      <p class="lcb-kicker">이런 것도 1등이라고?</p>
+      <h1 class="lcb-h1">저탄소 축산 1번지<br><em>전남광주통합특별시</em></h1>
+      <p class="lcb-lead">우리가 자주 먹는 삼겹살, 한우, 우유를 생산하며 지구의 열을 식히는 착한 농장들이 있습니다. 그것도 전남광주통합특별시에 가장 많이요! 무려 <strong>4년 연속 전국 1위</strong>랍니다. 전국 저탄소 축산물 농가 <strong>4곳 중 1곳</strong>이 여기 있어요. 전남광주통합특별시에.</p>
+    </div>
+  </section>
+
+  <!-- 1. 저탄소 축산물 인증제란? -->
+  <section class="lcb-sec" id="lcb-sec1">
+    <div class="lcb-group">
+      <p class="lcb-kicker">저탄소 축산물 인증제</p>
+      <h2 class="lcb-h2" tabindex="-1">저탄소 축산물 인증제란?</h2>
+      <p class="lcb-lead">아무 농장이나 받을 수 없는, 깐깐한 ‘친환경+탄소감축’ 국가 인증이에요.</p>
+      <dl class="lcb-box">
+        <div class="lcb-row">
+          <dt class="lcb-lb">기본 자격</dt>
+          <dd>이미 유기축산물, 무항생제, HACCP(해썹) 등 국가인증을 받은 깨끗한 농장이어야 합니다.</dd>
+        </div>
+        <div class="lcb-row">
+          <dt class="lcb-lb">인증 핵심</dt>
+          <dd>사료 조절(사양관리), 가축분뇨의 올바른 처리, 농장 에너지 절감 등을 통해 온실가스 배출량을 평균보다 10% 이상 줄이면 축산물품질평가원이 심사를 거쳐 인증합니다.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 2. 어떻게 4년 연속 1위가 가능할까? -->
+  <section class="lcb-sec" id="lcb-sec2">
+    <div class="lcb-group">
+      <p class="lcb-kicker">4년 연속 전국 1위</p>
+      <h2 class="lcb-h2" tabindex="-1">어떻게 4년 연속 1위가 가능할까?</h2>
+      <div class="lcb-map-row">
+      <figure class="lcb-figure lcb-map">
+        <div class="lcb-fig lcb-fig--map">
+          <img src="img/저탄소인증현황지도.jpg" alt="전국 시도별 저탄소 축산물 인증 현황 지도 — 전남 219호로 가장 많음" width="747" height="1019" loading="lazy" decoding="async">
+          <span class="lcb-map-layer lcb-anim" aria-hidden="true"><span class="lcb-map-pin"></span></span>
+        </div>
+        <figcaption class="lcb-cap">출처: 축산물품질평가원</figcaption>
+      </figure>
+      <div class="lcb-map-text">
+      <p class="lcb-lead">전남광주통합특별시의 축산 농가들이 직접 발로 뛰며 땀 흘려 만든 결과예요. 사양관리 개선, 가축분뇨 적정처리, 에너지 절감 등 탄소 감축 활동에 적극 참여했기 때문이죠!</p>
+      <p class="lcb-lead">올해는 무려 <strong>80호의 농가</strong>가 새롭게 인증을 받았는데요, 전국 저탄소 축산물 인증농가의 <span class="lcb-nw"><strong>26%</strong>가</span> 전남광주의 농가랍니다.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 숫자로 살펴보기 -->
+  <section class="lcb-sec" id="lcb-sec3">
+    <div class="lcb-group">
+      <p class="lcb-kicker">숫자로 보는 인증 현황</p>
+      <h2 class="lcb-h2" tabindex="-1">전남광주 저탄소 축사 인증,<br>숫자로 살펴볼까요</h2>
+
+      <div class="lcb-stat lcb-anim">
+        <dl class="lcb-stat-main">
+          <dt>누적 인증 농가</dt>
+          <dd class="lcb-stat-big">219<small>호</small></dd>
+          <dd class="lcb-share">
+            <span class="lcb-bar-track" aria-hidden="true"><span class="lcb-bar-fill" style="--t:26%"></span></span>
+            <span class="lcb-share-cap"><span>전남광주 219호</span><span>전국 851호</span></span>
+          </dd>
+        </dl>
+        <dl class="lcb-stat-side">
+          <div class="lcb-stat-item">
+            <dt>신규 인증 농가</dt>
+            <dd><span class="lcb-stat-num">80<small>호</small></span><span class="lcb-tag">신규 인증 전국 1위</span></dd>
+          </div>
+          <div class="lcb-stat-item">
+            <dt>인증 비율</dt>
+            <dd><span class="lcb-stat-num">26<small>%</small></span><span class="lcb-stat-sub">전국 851호 중</span></dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="lcb-kind-grid">
+        <div class="lcb-kind-card">
+          <div class="lcb-block-head"><h3 class="lcb-h3">축종별 인증 현황</h3></div>
+          <ul class="lcb-kinds lcb-anim">
+            <li>
+              <span class="lcb-kind-name"><span class="lcb-kind-badge" aria-hidden="true"><span class="lcb-ico lcb-ico--pig"></span></span>돼지</span>
+              <span class="lcb-bar-track" aria-hidden="true"><span class="lcb-bar-fill" style="--t:100%"></span></span>
+              <span class="lcb-kind-num">126호</span>
+            </li>
+            <li>
+              <span class="lcb-kind-name"><span class="lcb-kind-badge" aria-hidden="true"><span class="lcb-ico lcb-ico--hanwoo"></span></span>한우</span>
+              <span class="lcb-bar-track" aria-hidden="true"><span class="lcb-bar-fill" style="--t:53.2%"></span></span>
+              <span class="lcb-kind-num">67호</span>
+            </li>
+            <li>
+              <span class="lcb-kind-name"><span class="lcb-kind-badge" aria-hidden="true"><span class="lcb-ico lcb-ico--dairy"></span></span>젖소</span>
+              <span class="lcb-bar-track" aria-hidden="true"><span class="lcb-bar-fill" style="--t:20.6%"></span></span>
+              <span class="lcb-kind-num">26호</span>
+            </li>
+          </ul>
+        </div>
+        <div class="lcb-kind-card">
+          <div class="lcb-block-head">
+            <h3 class="lcb-h3">신규 인증 농가</h3>
+            <span class="lcb-tag">신규 인증 전국 1위</span>
+          </div>
+          <ul class="lcb-kinds lcb-kinds--new lcb-anim">
+            <li>
+              <span class="lcb-kind-name"><span class="lcb-kind-badge" aria-hidden="true"><span class="lcb-ico lcb-ico--pig"></span></span>돼지</span>
+              <span class="lcb-bar-track" aria-hidden="true"><span class="lcb-bar-fill" style="--t:41.3%"></span></span>
+              <span class="lcb-kind-num">52호</span>
+            </li>
+            <li>
+              <span class="lcb-kind-name"><span class="lcb-kind-badge" aria-hidden="true"><span class="lcb-ico lcb-ico--dairy"></span></span>젖소</span>
+              <span class="lcb-bar-track" aria-hidden="true"><span class="lcb-bar-fill" style="--t:13.5%"></span></span>
+              <span class="lcb-kind-num">17호</span>
+            </li>
+            <li>
+              <span class="lcb-kind-name"><span class="lcb-kind-badge" aria-hidden="true"><span class="lcb-ico lcb-ico--hanwoo"></span></span>한우</span>
+              <span class="lcb-bar-track" aria-hidden="true"><span class="lcb-bar-fill" style="--t:8.7%"></span></span>
+              <span class="lcb-kind-num">11호</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lcb-block">
+        <h3 class="lcb-h3">지역별 신규 농가</h3>
+        <ul class="lcb-region">
+          <li><span class="lcb-region-name">나주</span><span class="lcb-region-num">15호</span></li>
+          <li><span class="lcb-region-name">무안</span><span class="lcb-region-num">14호</span></li>
+          <li><span class="lcb-region-name">함평·화순</span><span class="lcb-region-num"><small>각 </small>9호</span></li>
+          <li><span class="lcb-region-name">장흥·영암</span><span class="lcb-region-num"><small>각 </small>6호<small> 등</small></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 저탄소 인증 제품 -->
+  <section class="lcb-sec" id="lcb-sec4">
+    <div class="lcb-group">
+      <p class="lcb-kicker">저탄소 인증마크</p>
+      <div class="lcb-mark-head">
+        <h2 class="lcb-h2 lcb-mark-title" tabindex="-1">저탄소 인증을 받은<span class="lcb-br lcb-br--mo"></span> 제품,<span class="lcb-br lcb-br--web"></span> 뭐가 좋을까?</h2>
+        <figure class="lcb-mark-box">
+          <div class="lcb-mark-fig">
+            <img src="img/저탄소인증마크.webp" alt="축산물품질평가원 저탄소 축산물 인증마크" loading="lazy" decoding="async">
+          </div>
+        </figure>
+      </div>
+      <div class="lcb-prod-row">
+        <figure class="lcb-prod">
+          <div class="lcb-fig lcb-fig--prod">
+            <img src="img/저탄소인증제품.webp" alt="" loading="lazy" decoding="async">
+          </div>
+          <figcaption class="lcb-cap lcb-cap--out">출처: 축산물품질평가원</figcaption>
+        </figure>
+        <p class="lcb-lead">저탄소 인증 농가에서 생산한 제품에는 포장 판매 시 ‘저탄소’ 인증마크가 부여되는데요, 저탄소 인증 마크를 받은 제품은 <span class="lcb-nw">이런 장점이 있어요.</span></p>
+      </div>
+      <ol class="lcb-benefits">
+        <li class="lcb-benefit">
+          <div class="lcb-benefit-head"><span class="lcb-num" aria-hidden="true">1</span><h3 class="lcb-h3">온실가스를 줄인 농장 제품을<span class="lcb-br lcb-br--mo"></span> 구분할 수 있어요</h3></div>
+          <p>인증 농장은 같은 축종 평균보다 온실가스를 10% 이상 줄인 곳이에요. 마크 하나로 저탄소 농장에서 나온 고기와 우유를 알아볼 수 있어요.</p>
+        </li>
+        <li class="lcb-benefit">
+          <div class="lcb-benefit-head"><span class="lcb-num" aria-hidden="true">2</span><h3 class="lcb-h3">이력까지 확인할 수 있어요</h3></div>
+          <p>소고기와 돼지고기는 축산물이력제 앱이나 웹에서 이력번호로 저탄소 인증 정보를 조회할 수 있답니다.</p>
+        </li>
+        <li class="lcb-benefit">
+          <div class="lcb-benefit-head"><span class="lcb-num" aria-hidden="true">3</span><h3 class="lcb-h3">기본 관리 수준이 확인된 농장이에요</h3></div>
+          <p>인증을 받으려면 HACCP, 무항생제, 유기축산, 깨끗한 축산농장 같은 위생·안전·환경 국가인증을 1개 이상 갖고 있어야 해요. 농장 관리 능력과 탄소 감축 기술 적용도 요건이죠. 믿고 먹을 수 있다는 뜻!</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="lcb-sec lcb-foot">
+    <p class="lcb-foot-title">다음번 장보기엔<span class="lcb-br lcb-br--mo"></span> 포장지를 한번 살펴보세요</p>
+    <p class="lcb-foot-text">전남광주통합특별시의 많은 축산 농가들이 탄소를 줄여<span class="lcb-br lcb-br--web"></span> 지구를 사랑하는 마음을 담아 제품을 생산하고 있으니까요!</p>
+    <ul class="lcb-tags">
+      <li>#저탄소축산물</li>
+      <li>#저탄소축산물인증</li>
+      <li>#저탄소인증마크</li>
+      <li>#전남광주통합특별시</li>
+      <li>#전남광주저탄소축산</li>
+      <li>#축산물품질평가원</li>
+      <li>#축산물이력제</li>
+      <li>#온실가스감축</li>
+      <li>#탄소중립</li>
+      <li>#친환경축산</li>
+    </ul>
+  </footer>
+
+</article>
+
+<script>
+(function(){
+  var root = document.querySelector('.contents_div');
+  if(!root) return;
+  var wrap = root.querySelector('.lcb-wrap');
+  if(!wrap) return;
+
+  /* 앵커 내비: URL 해시를 바꾸지 않고 스크롤 */
+  var btns = wrap.querySelectorAll('.lcb-nav-btn');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var sec = wrap.querySelector('#' + btn.getAttribute('data-go'));
+      if(!sec) return;
+      sec.scrollIntoView({ behavior:'smooth', block:'start' });
+      var h = sec.querySelector('.lcb-h2');
+      if(h){ try{ h.focus({ preventScroll:true }); }catch(e){} }
+    });
+  });
+
+  if(!('IntersectionObserver' in window)) return;
+
+  /* 현재 위치 표시 */
+  var map = {};
+  btns.forEach(function(b){ map[b.getAttribute('data-go')] = b; });
+  var navIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      btns.forEach(function(b){ b.classList.remove('is-on'); });
+      var b = map[en.target.id];
+      if(b) b.classList.add('is-on');
+    });
+  }, { rootMargin:'-40% 0px -55% 0px' });
+  Object.keys(map).forEach(function(id){
+    var sec = wrap.querySelector('#' + id);
+    if(sec) navIO.observe(sec);
+  });
+
+  /* 막대그래프: 화면에 들어오면 채우기 */
+  var bars = wrap.querySelectorAll('.lcb-anim');
+  var barIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('is-on'); barIO.unobserve(en.target); }
+    });
+  }, { threshold:0.3 });
+  bars.forEach(function(el){ barIO.observe(el); });
+})();
+</script>
+
+<script>
+(function(){
+  var root=document.querySelector('.contents_div');
+  if(!root)return;
+  var hero=root.querySelector('#cwhHero');
+  if(!hero)return;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  if(!('IntersectionObserver' in window))return;
+  hero.classList.add('cwh-ready');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        hero.classList.add('cwh-play');
+        io.disconnect();
+      }
+    });
+  },{threshold:0.3});
+  io.observe(hero);
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "저탄소 축산물 인증제란?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아무 농장이나 받을 수 없는, 깐깐한 ‘친환경+탄소감축’ 국가 인증이에요. 이미 유기축산물, 무항생제, HACCP(해썹) 등 국가인증을 받은 깨끗한 농장이어야 합니다. 사료 조절(사양관리), 가축분뇨의 올바른 처리, 농장 에너지 절감 등을 통해 온실가스 배출량을 평균보다 10% 이상 줄이면 축산물품질평가원이 심사를 거쳐 인증합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "어떻게 4년 연속 1위가 가능할까?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "전남광주통합특별시의 축산 농가들이 직접 발로 뛰며 땀 흘려 만든 결과예요. 사양관리 개선, 가축분뇨 적정처리, 에너지 절감 등 탄소 감축 활동에 적극 참여했기 때문이죠!"
+      }
+    }
+  ]
+}
+</script>
+</div>
