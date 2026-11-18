@@ -159,8 +159,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 /* ===== 인트로 ===== */
 .contents_div .lcb-intro{ background:var(--c-cream); }
-.contents_div .lcb-h1{ margin-top:14px; font-size:calc(var(--fs-h2) * 1.0625); font-weight:900; line-height:1.25; letter-spacing:-0.01em; }   /* 웹 800 기준 34px */
-.contents_div .lcb-h1 em{ font-style:normal; color:var(--c-leaf); font-size:calc(1.15em / 1.0625); }   /* 포인트 강조 (웹만) · 800 기준 36.8px 유지 */
+.contents_div .lcb-h1{ margin-top:14px; font-size:calc(var(--fs-h2) * 1.15); font-weight:900; line-height:1.25; letter-spacing:-0.01em; margin-bottom:28px; }   /* 웹 800 기준 36.8px · 아래 여백 +28 */
+.contents_div .lcb-h1 em{ font-style:normal; color:var(--c-leaf); }
 
 /* ===== 1. 인증제란 (어두운 배경) ===== */
 .contents_div #lcb-sec1{ background:var(--c-deep); color:var(--c-cream); }
@@ -345,8 +345,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .lcb-br--mo-wide{ display:inline; }
   .contents_div .lcb-h2,
   .contents_div .lcb-h1{ line-height:1.4; margin-top:12px; }
-  .contents_div .lcb-h1{ font-size:calc(var(--fs-h2) + 1px); }   /* 모바일: h2보다 1px 크게 */
-  .contents_div .lcb-h1 em{ font-size:1em; }
+  .contents_div .lcb-h1{ font-size:calc(var(--fs-h2) + 1px); margin-bottom:8px; }   /* 모바일: h2보다 1px 크게 · 아래 여백 +8(웹 +10 비율) */
   .contents_div .lcb-mark-head{ margin-top:12px; }
   .contents_div .lcb-mark-box{ transform:translateY(-10px); }
   .contents_div .lcb-fig--map{ border:1px solid rgba(63,125,79,.35); border-radius:12px; }
@@ -464,7 +463,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     <div class="lcb-group">
       <p class="lcb-kicker">이런 것도 1등이라고?</p>
       <h1 class="lcb-h1">저탄소 축산 1번지<br><em>전남광주통합특별시</em></h1>
-      <p class="lcb-lead">우리가 자주 먹는 삼겹살, 한우, 우유를 생산하며 지구의 열을 식히는 착한 농장들이 있습니다.<span class="lcb-br lcb-br--web"></span> 그것도 전남광주통합특별시에 가장 많이요! 무려 <strong>4년 연속 전국 1위</strong>랍니다. 전국 저탄소 축산물 농가<span class="lcb-br lcb-br--web"></span> <strong>4곳 중 1곳</strong>이 여기 있어요. 전남광주통합특별시에.</p>
+      <p class="lcb-lead">우리가 자주 먹는 삼겹살, 한우, 우유를 생산하며 지구의 열을 식히는 착한 농장들이 있습니다.<span class="lcb-br lcb-br--web"></span> 그것도 전남광주<wbr>통합특별시에 가장 많이요! 무려 <strong>4년 연속 전국 1위</strong>랍니다. 전국 저탄소 축산물 농가<span class="lcb-br lcb-br--web"></span> <strong>4곳 중 1곳</strong>이 여기 있어요. 전남광주<wbr>통합특별시에.</p>
     </div>
   </section>
 
